@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_051148) do
+ActiveRecord::Schema.define(version: 2021_04_25_044818) do
+
+  create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
@@ -19,6 +26,13 @@ ActiveRecord::Schema.define(version: 2021_04_21_051148) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
   end
 
 end
